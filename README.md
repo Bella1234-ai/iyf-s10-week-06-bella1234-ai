@@ -321,4 +321,5 @@ Asynchronous functions have specific rules that can be easy to overlook when you
 <img width="334" height="534" alt="image" src="https://github.com/user-attachments/assets/09edb6d9-07f8-4454-b313-5def7b9e094b" />
 
 ## Live Demo (if deployed)
-[View Live Demo](https://your-deployed-url.com)
+[[View Live Demo](https://your-deployed-url.com)
+](https://github.com/Bella1234-ai/iyf-s10-week-06-bella1234-ai.git)
