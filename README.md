@@ -89,9 +89,63 @@ This is the interface that allows JavaScript to "talk" to your HTML.
 
 By combining these, you aren't just writing scripts; you're building a full-fledged Client-Server architecture where the "Client" (the browser) communicates with a "Server" (the API) to manage data in real-time.
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+1. Asynchronous Control Flow
+
+These features determine how and when code executes when dealing with tasks that don't finish immediately (like API calls).
+
+    Promises: The foundation of modern async JS. A Promise acts as a placeholder for a value that will be available in the future (either a success value or a failure reason).
+
+    Promise Chaining: Using .then() to link multiple asynchronous operations together in a specific sequence.
+
+    Parallelism (Promise.all): A performance-optimizing feature that executes multiple independent promises simultaneously, returning a single promise that resolves only when all items in the array are finished.
+
+    Competitive Race (Promise.race): Returns the result of the first promise to settle (either resolve or reject), often used for setting request timeouts.
+
+    Async/Await: A modern syntax that "pauses" function execution at an await keyword until a promise settles, making the code much more readable and linear.
+
+2. Data Communication (The Fetch API)
+
+The Fetch API is the primary interface for fetching resources across the network. It uses several specific features to manage requests and responses:
+
+    HTTP Methods:
+
+        GET: Used for retrieving data from a server.
+
+        POST: Used for sending new data to a server to create a resource.
+
+    Request Headers: Metadata sent with a request (like Content-Type: application/json) to tell the server what kind of data it is receiving.
+
+    Request Body: The actual data payload sent during a POST request, which must be converted to a string format using JSON.stringify().
+
+    Response Parsing: Using .json() to take a raw HTTP response and turn it into a usable JavaScript object.
+
+    Status Validation: Checking the response.ok property (which tracks if the HTTP status code is in the 200–299 range) to ensure the server actually processed the request successfully.
+
+3. Error & State Management
+
+Professional applications use these features to ensure the app remains stable even when the network fails or the server is down.
+
+    Try...Catch...Finally: * try: Wraps code that might fail.
+
+        catch: Handles the error if it occurs.
+
+        finally: Executes code regardless of success or failure (perfect for hiding "loading" spinners).
+
+    Manual Error Throwing: Using throw new Error() to manually trigger a failure if the server returns a bad status code (like a 404 or 500).
+
+    Loading States: Programmatically toggling CSS classes or HTML content to show a "Loading..." message while a promise is pending.
+
+4. Modern JavaScript (ES6+) Enhancements
+
+These "quality of life" features make the code cleaner and more efficient when working with data-heavy applications.
+
+    Arrow Functions: Provide a shorter syntax for callbacks used in .then() and .forEach().
+
+    Template Literals: Using backticks (`) and ${} to easily inject dynamic data (like a username or task title) directly into HTML strings.
+
+    Array Destructuring: A shorthand for unpacking values from arrays, commonly used to grab results from a Promise.all() call (e.g., const [users, posts] = await Promise.all(...)).
+
+    Event Handling: Using event.preventDefault() in form submissions to stop the browser from refreshing the page, allowing JavaScript to handle the data fetch instead.
 
 ## How to Run
 1. Clone this repository
